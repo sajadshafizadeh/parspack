@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+/* 
+ * --------------------- Common routes ----------------------
+ */
+Route::middleware('auth')->get('running-server-processes', 'ServerProcessesController@running_list');

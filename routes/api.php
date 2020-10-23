@@ -30,3 +30,9 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
     Route::post('logout', 'AuthController@logout');
 });
+
+
+/* 
+ * --------------------- Common routes ----------------------
+ */
+Route::middleware('auth:api')->get('running-server-processes', 'ServerProcessesController@running_list');

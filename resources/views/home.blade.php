@@ -14,7 +14,12 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <h3>List of available features of your panel;</h3>
+                    <p>Use & Enjoy ..!</p>
+
+                    <ul>
+                        <li><a href="/running-server-processes">List of running processes on the server ..!</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

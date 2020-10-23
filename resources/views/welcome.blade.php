@@ -69,6 +69,11 @@
             .feature-list{
                 text-align: left;
             }
+            .access-link{
+                margin: 40px auto;
+                display: block;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -104,6 +109,8 @@
                         <li>Get list of all directories in "/opt/myprogram/" directory</li>
                         <li>Get list of all files in "/opt/myprogram/" directory</li>
                     </ul> 
+
+                    <strong class="access-link"><a href="/home">Access them all through your panel</a></strong>
                 </div>
             </div>
         </div>
