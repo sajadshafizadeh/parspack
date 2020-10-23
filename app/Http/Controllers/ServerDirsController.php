@@ -10,10 +10,7 @@ class ServerDirsController extends Controller
 
 	const DIR_PATH_LINUX   = '/opt/myprogram/';
 	const DIR_PATH_WINDOWS = 'C:\xampp\htdocs\\parspack\\storage\\myprogram\\';
-
-	// const DIR_PATH = [ 	'LINUX' =>  '/opt/myprogram/',
-	// 					'WINDOWS' => 'C:\xampp\htdocs\\parspack\\storage\\myprogram\\'];
-
+	
 	private $os;
 
     public function __construct(Request $request)
