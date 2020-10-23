@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
-{
+{   
     /**
      * Create a new AuthController instance.
      *
@@ -17,7 +21,36 @@ class AuthController extends Controller
         // To set the guard
         auth()->setDefaultDriver('api');
 
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
+
+
+
+    /**
+     * Get a JWT via given user's info.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function register(Request $request){
+
+        // Validate entries()
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        if ($validator->fails()) {
+            return response()->json([['error' =>  $validator->errors()->first()], 401]);
+        }
+
+        // Create a new user
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return ["user_id" => $user->id, "logged_in" => $this->login()]; 
     }
 
     /**
