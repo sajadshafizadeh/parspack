@@ -21,9 +21,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/get-dir-name', 'ServerDirsController@get_dir_name')->name('home');
+
 
 
 /* 
- * --------------------- Common routes ----------------------
+|--------------------------------------------------------------------------
+| Common routes
+|--------------------------------------------------------------------------
  */
-Route::middleware('auth')->get('running-server-processes', 'ServerProcessesController@running_list');
+Route::get('running-server-processes', 'ServerProcessesController@running_list');
+Route::post('create-dir', 'ServerDirsController@create_dir')->name('create-dir');

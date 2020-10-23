@@ -33,6 +33,9 @@ Route::group([
 
 
 /* 
- * --------------------- Common routes ----------------------
+|--------------------------------------------------------------------------
+| Common routes
+|--------------------------------------------------------------------------
  */
-Route::middleware('auth:api')->get('running-server-processes', 'ServerProcessesController@running_list');
+Route::get('running-server-processes', 'ServerProcessesController@running_list');
+Route::post('create-dir', 'ServerDirsController@create_dir');

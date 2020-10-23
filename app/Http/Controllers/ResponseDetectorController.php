@@ -14,7 +14,8 @@ class ResponseDetectorController extends Controller
 
 	    } else {
 	    	// It's a web interface
-	        return $view_name ? view($view_name)->with('data', $data) : dd($data);
+	    	$msg = isset($data['msg']) ? $data['msg'] : null;
+	        return $view_name ? view($view_name)->with('data', $data) : redirect()->back()->with('msg', $msg);
 	    }
 	}
 }

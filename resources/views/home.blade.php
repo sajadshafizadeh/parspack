@@ -18,7 +18,8 @@
                     <p>Use & Enjoy!</p>
 
                     <ul>
-                        <li><a href="/running-server-processes">List of running processes on the server ..!</a></li>
+                        <li><a href="/running-server-processes">List of running processes on the server</a></li>
+                        <li><a href="/get-dir-name">Create a directory under "/opt/myprogram/"</a></li>
                     </ul>
                 </div>
             </div>

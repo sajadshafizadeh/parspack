@@ -8,16 +8,21 @@ use App\Http\Controllers\ResponseDetectorController;
 class ServerProcessesController extends Controller
 {
 
-    public function __construct()
-    {
+    private $os;
+
+    public function __construct(Request $request)
+    {  
+        // To know the request has came from either api or web route files 
+    	$request->is('api/*') ? $this->middleware('auth:api') : $this->middleware('auth');
+
+         // To get the OS
+        $this->os = getOS();
     }
 
 	public function running_list(Request $request){
 
-    	config('app.os') == 'windows' ? exec("tasklist", $task_list) :
-    	config('app.os') == 'linux'   ?  exec("ps faux", $task_list) :
-    	dd('Wrong OS defined');
+    	exec(config('commands.os.'.$this->os.'.running-processes'), $running_proc);
 
-		return ResponseDetectorController::index($request, $task_list, 'running-server-processes');
+		return ResponseDetectorController::index($request, $running_proc, 'running-server-processes');
     }
 }
