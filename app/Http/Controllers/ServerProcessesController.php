@@ -13,11 +13,10 @@ class ServerProcessesController extends Controller
     }
 
 	public function running_list(Request $request){
-    	// Windows OS
-		exec("tasklist", $task_list);
 
-		// Linux OS
-		// exec("ps faux", $task_list);
+    	config('app.os') == 'windows' ? exec("tasklist", $task_list) :
+    	config('app.os') == 'linux'   ?  exec("ps faux", $task_list) :
+    	dd('Wrong OS defined');
 
 		return ResponseDetectorController::index($request, $task_list, 'running-server-processes');
     }

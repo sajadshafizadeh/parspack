@@ -14,8 +14,8 @@
                         </div>
                     @endif
 
-                    <h3>List of available features of your panel;</h3>
-                    <p>Use & Enjoy ..!</p>
+                    <h3>Available features on your panel</h3>
+                    <p>Use & Enjoy!</p>
 
                     <ul>
                         <li><a href="/running-server-processes">List of running processes on the server ..!</a></li>
