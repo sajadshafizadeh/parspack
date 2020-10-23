@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Welcome To Parspack</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -59,7 +59,15 @@
             }
 
             .m-b-md {
+                margin-bottom: 15px;
+            }
+
+            .sub-title{
+                font-size: 30px;
                 margin-bottom: 30px;
+            }
+            .feature-list{
+                text-align: left;
             }
         </style>
     </head>
@@ -81,18 +89,21 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Parspack Platform! 
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="sub-title">
+                    You can see features' list of this platform below: 
+                </div>
+                <div class="feature-list">
+                    <ul>
+                        <li>Sign up :-)</li>
+                        <li>Authenticate via token</li>
+                        <li>Get list of running processes on the server</li>
+                        <li>Create a directory with user's specified name in "/opt/myprogram/" directory</li>
+                        <li>Create a file with user's specified name in "/opt/myprogram/" directory.</li>
+                        <li>Get list of all directories in "/opt/myprogram/" directory</li>
+                        <li>Get list of all files in "/opt/myprogram/" directory</li>
+                    </ul> 
                 </div>
             </div>
         </div>
