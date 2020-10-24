@@ -14,17 +14,17 @@
                         </div>
                     @endif
 
-                    <h3>Enter the desired dir name</h3>
-                    <p>What you enters will be consideres as name of the directory will be created under "/opt/myprogram/</p>
+                    <h3>Enter the desired file name</h3>
+                    <p>What you enters will be consideres as name of the file will be created under "/opt/myprogram/</p>
 
-                    <form method="POST" action="{{ route('create-dir') }}">
+                    <form method="POST" action="{{ route('create-file') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Directory Name</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">file Name</label>
 
                             <div class="col-md-6">
-                                <input id="dir_name" type="text" class="form-control @error('email') is-invalid @enderror" name="dir_name" value="{{ old('dir_name') }}" required autofocus>
+                                <input id="file_name" type="text" class="form-control @error('email') is-invalid @enderror" name="file_name" value="{{ old('file_name') }}" required autofocus placeholder="Plus the extension (.txt)">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">

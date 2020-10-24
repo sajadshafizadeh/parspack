@@ -39,3 +39,6 @@ Route::group([
  */
 Route::get('running-server-processes', 'ServerProcessesController@running_list');
 Route::post('create-dir', 'ServerDirsController@create_dir');
+Route::post('create-file', 'ServerDirsController@create_file');
+Route::get('get-list-of-dirs', 'ServerDirsController@get_list_of_dirs');
+Route::get('get-list-of-files', 'ServerDirsController@get_list_of_files');

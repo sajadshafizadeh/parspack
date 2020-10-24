@@ -20,6 +20,9 @@
                     <ul>
                         <li><a href="/running-server-processes">List of running processes on the server</a></li>
                         <li><a href="/get-dir-name">Create a directory under "/opt/myprogram/"</a></li>
+                        <li><a href="/get-file-name">Create a file under "/opt/myprogram/"</a></li>
+                        <li><a href="/get-list-of-dirs">Get list of all directories under "/opt/myprogram/"</a></li>
+                        <li><a href="/get-list-of-files">Get list of all files under "/opt/myprogram/"</a></li>
                     </ul>
                 </div>
             </div>
