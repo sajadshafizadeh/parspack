@@ -81,9 +81,9 @@ class ServerDirsController extends Controller
 				// file_put_contents($path, file_get_contents($path));
 
 				$fp = fopen($path,"wb");
+				// To avoid code injection attach
+				chmod($path, '744');
 				fclose($fp);
-
-
 
 			} catch (Exception $e) {
 				return ResponseDetectorController::index($request, ['msg' => $e->getMessage()]);
