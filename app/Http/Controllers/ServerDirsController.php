@@ -64,7 +64,7 @@ class ServerDirsController extends Controller
 
         // Validate given dir-name
         $validator = Validator::make($request->all(), [
-            'file_name' => ['required', 'string', 'min:1', 'max:128', 'regex:/^[A-Za-z. -]+$/'],
+            'file_name' => ['required', 'string', 'min:1', 'max:128', 'regex:/^[0-9A-Za-z. -]+$/'],
         ]);
 
         if ($validator->fails()) {
